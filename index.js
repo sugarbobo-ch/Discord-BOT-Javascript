@@ -40,7 +40,7 @@ client.on(Events.MessageDelete, (message) => {
   if (message.author.bot) return;
 
   console.log(`${message.author.username}刪除了${message.content}`);
-  message.reply('收回怪抓到!!');
+  message.channel.send('收回怪抓到!!');
 });
 
 client.on(Events.MessageUpdate, (message) => {
@@ -49,7 +49,7 @@ client.on(Events.MessageUpdate, (message) => {
   console.log(
     `${message.author.username}更新了${message.content}改為${message.reactions.message.content}`,
   );
-  message.reply('還想偷改啊');
+  message.channel.send(`${message.author.username} 還想偷改啊`);
 });
 
 // Log in to Discord with your client's token
